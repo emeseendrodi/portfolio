@@ -1,0 +1,624 @@
+/* ================================
+  BASIC + BACKGROUND
+================================ */
+
+body {
+  animation: theme 21s linear infinite;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body::before,
+body::after {
+  content: '';
+  display: block;
+  position: fixed;
+  z-index: -100;
+  top: 0;
+  width: 100vmax;
+  height: 100vmax;
+  background: rgba(0, 0, 0, 0.05);
+  animation: background 90s linear infinite;
+}
+
+body::after {
+  left: 15vw;
+}
+
+body::before {
+  right: 15vw;
+  animation-delay: -30s;
+  animation-direction: reverse;
+}
+
+.container {
+  padding: 3% 10%;
+  color: beige;
+}
+
+img {
+  margin: 0 auto;
+  display: block;
+}
+
+/* ================================
+  NAVBAR
+================================ */
+
+.navbar {
+  border-bottom: 4px solid beige;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10; /* biztos, hogy a navbar felül legyen */
+}
+
+.navbar.scrolled {
+  background-color: rgba(145, 169, 146, 0.6);
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0.4em;
+  font-size: 30px;
+  color: beige;
+}
+
+.navbar-element-menu {
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-element {
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.navbar-element a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-element:hover {
+  font-weight: 600;
+  color: #fafae8;
+}
+
+.logo {
+  width: 40px;
+  padding: 0;
+}
+
+.text-label {
+  display: none;
+}
+
+.icon-label {
+  display: inline;
+  font-size: 1em;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+
+/* ================================
+  HERO SECTION
+================================ */
+
+#hero.hero-container {
+  text-align: center;
+  padding: 5% 5% 6%;
+  color: beige;
+  
+  border-bottom: 4px solid beige;
+  backdrop-filter: blur(4px);
+  animation: slideFadeIn 1s ease-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: slideFadeIn 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #f0f0da;
+  animation: slideFadeIn 1s ease-out 0.2s;
+}
+
+.hero-subtitle span {
+  font-weight: 600;
+  color: #fffad0;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid beige;
+  color: beige;
+  font-size: 1rem;
+  padding: 0.6em 1.5em;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+.hero-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fffde0;
+}
+
+/* ================================
+  ABOUT
+================================ */
+
+#about {
+  position: relative;
+  max-width: 900px;
+  margin: 5% auto;
+  padding: 3em 2em 1em 3.5em;
+  border-left: 4px solid beige;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  color: beige;
+  font-size: 1rem;
+}
+
+/* ================================
+  FUN FACTS
+================================ */
+
+.fun-facts-container {
+  margin-top: 1.5rem;
+  text-align: center;
+  max-width: 100%;
+  padding: 0 1rem;
+  font-family: inherit;
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: 2px solid beige;
+  color: beige;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+.toggle-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fun-facts {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 1rem auto 0;
+  max-width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  color: #f0f0da;
+  line-height: 1.5;
+}
+
+.fun-facts li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.8em;
+  transition: transform 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+.fun-facts li:hover {
+  transform: translateX(6px);
+  color: beige;
+  font-weight: 600;
+}
+
+.fun-facts li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 1.1em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fun-facts li:hover::before {
+  transform: rotate(15deg) scale(1.2);
+  color: gold;
+}s
+
+/* ================================ 
+  PROJECTS
+================================ */
+#projects {
+  max-width: 1100px;
+  margin: 5% auto;
+  padding: 2em 1em;
+  color: beige;
+  text-align: center;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+.project-card {
+  position: relative;
+  isolation: isolate;
+  width: 300px;
+  height: 220px;
+  background-color: rgba(255, 255, 255, 0.04);
+ border-left: 4px solid beige;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  color: beige;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.project-card:hover {
+  height: 400px; 
+ 
+}
+
+
+.project-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  border: 2px solid beige;
+  box-sizing: border-box; 
+}
+
+.project-card:hover img {
+  transform: scale(1.02);
+}
+
+.project-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+
+.project-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  color: beige;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 0 0 1rem 1rem;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  text-align: left;
+  width: 95%;
+  margin-top: 0;
+}
+
+.project-card:hover .project-details {
+  opacity: 1;
+  max-height: 700px;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-list li {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #f5f5dc;
+}
+
+
+.links a {
+  color: beige;
+  margin-right: 1rem;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: #fffde0;
+}
+
+/* ================================ 
+  CONTACT
+================================ */
+
+#contact.contact-section {
+  padding: 4% 10%;
+  border-top: 4px solid beige;
+  color: beige;
+  
+  text-align: center;
+  backdrop-filter: blur(4px);
+  animation: slideFadeIn 1s ease-out;
+
+  margin-top: 10%;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #f0f0da;
+}
+
+
+
+.contact-methods p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+.contact-methods a {
+  color: #fffad0;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact-methods a:hover {
+  color: gold;
+}
+
+
+
+
+
+/* ================================
+  MEDIA QUERIES
+================================ */
+
+@media (min-width: 800px) {
+  .text-label {
+    display: inline;
+  }
+
+  .navbar .icon-label {
+    display: none;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .fun-facts-container {
+    max-width: 650px;
+    margin: 2.5rem auto;
+    padding: 0;
+  }
+
+  .toggle-button {
+    font-size: 1.1rem;
+    padding: 0.6em 1.5em;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+
+  .fun-facts {
+    max-width: 600px;
+    font-size: 1.15rem;
+    padding-left: 1.5em;
+    line-height: 1.6;
+  }
+
+  .fun-facts li {
+    margin-bottom: 0.75rem;
+    padding-left: 2em;
+  }
+
+  .fun-facts li:hover {
+    transform: translateX(8px);
+  }
+
+  .fun-facts li::before {
+    font-size: 1.2em;
+    top: 0.15em;
+  }
+
+  .fun-facts li:hover::before {
+    transform: rotate(15deg) scale(1.3);
+  }
+
+  .project-card:hover {
+  height: 360px; /* kibővül hoverkor */
+ 
+}
+}
+
+/* ================================
+  LARGE SCREENS (1500px+)
+================================ */
+@media (min-width: 1500px) {
+  .container {
+    padding: 3% 15%;
+  }
+
+  /* Navbar */
+  .navbar ul {
+    font-size: 36px;
+  }
+
+  .navbar-element-menu {
+    width: 40vw;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  /* Hero */
+  #hero.hero-container {
+    padding: 6% 10% 8%;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 900px;
+  }
+
+  .hero-button {
+    font-size: 1.2rem;
+    padding: 0.8em 2em;
+  }
+
+  /* About */
+  #about {
+    max-width: 1000px;
+    padding: 4em 3em 2em 4em;
+    font-size: 1.1rem;
+  }
+
+  /* Fun Facts */
+  .fun-facts-container {
+    max-width: 800px;
+    margin: 3rem auto;
+  }
+
+  .fun-facts {
+    max-width: 700px;
+    font-size: 1.25rem;
+  }
+
+  /* Projects */
+
+ 
+  #projects h2 {
+    font-size: 3rem; /* nagyobb címsor */
+    margin-bottom: 2rem; /* több tér a rács előtt */
+    text-align: center;
+  }
+
+
+  .project-card {
+    width: 350px;
+    height: 250px;
+  }
+
+  .project-card:hover {
+    height: 420px;
+  }
+
+  /* Contact */
+  #contact.contact-section {
+    padding: 5% 15%;
+  }
+
+  .contact-title {
+    font-size: 3rem;
+  }
+
+  .contact-description {
+    font-size: 1.3rem;
+    max-width: 700px;
+  }
+}
+
+/* ================================
+  ANIMATIONS
+================================ */
+
+@keyframes theme {
+  0%, 100% {
+    background: #91a992;
+  }
+}
+
+@keyframes background {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#about {
+  animation: slideFadeIn 1s ease-out 0.3s forwards;
+}
