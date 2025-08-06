@@ -4,6 +4,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   animation: theme 21s linear infinite;
   font-family: "Poppins", sans-serif;
@@ -167,6 +168,14 @@ section {
 .hero-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fffde0;
+}
+
+
+.hero-btn{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 
 /* ================================
