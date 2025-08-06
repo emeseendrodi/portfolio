@@ -18,7 +18,9 @@ export default function NavBar() {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <ul>
         <li>
-          <img src={logo} alt="Logo" className="logo" />
+            <a href="#">
+    <img src={logo} alt="Logo" className="logo" />
+  </a>
         </li>
         <div className="navbar-element-menu">
           <li className="navbar-element">

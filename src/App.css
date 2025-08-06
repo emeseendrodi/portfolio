@@ -1,7 +1,9 @@
 /* ================================
   BASIC + BACKGROUND
 ================================ */
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   animation: theme 21s linear infinite;
   font-family: "Poppins", sans-serif;
