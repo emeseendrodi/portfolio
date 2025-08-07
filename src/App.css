@@ -484,11 +484,32 @@ section {
   }
 
   .fun-facts {
-    max-width: 600px;
-    font-size: 1.15rem;
-    padding-left: 1.5em;
-    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto 0;
+    max-width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: #f0f0da;
+    line-height: 1.5;
+
+    /* Animációhoz szükséges */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
   }
+
+  .fun-facts.show {
+    animation: expandFadeIn 0.5s ease forwards;
+
+  }
+  
+  .fun-facts.hide {
+    animation: expandFadeOut 0.5s ease forwards;
+
+  }
+
 
   .fun-facts li {
     margin-bottom: 0.75rem;
@@ -635,7 +656,38 @@ section {
     opacity: 1;
     transform: translateX(0);
   }
+
+  
 }
+
+@keyframes expandFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+  }
+}
+
+@keyframes expandFadeOut {
+  0% {
+
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+
+  }
+}
+
 
 #about {
   animation: slideFadeIn 1s ease-out 0.3s forwards;

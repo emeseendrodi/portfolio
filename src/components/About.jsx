@@ -32,7 +32,7 @@ export default function About() {
         </button>
 
         {showFacts && (
-          <ul className="fun-facts">
+          <ul className={`fun-facts ${showFacts ? "show" : "hide"}`}>
             <li> I love baking delicious cookies from scratch.</li>
             <li> I can crochet small plushies and wearables.</li>
             <li> I go hiking to disconnect from tech and reconnect with nature.</li>
