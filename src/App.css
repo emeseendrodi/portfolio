@@ -150,6 +150,13 @@ section {
   font-weight: 600;
   color: #fffad0;
 }
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
 
 .hero-button {
   display: inline-block;
@@ -292,7 +299,7 @@ section {
   border-radius: 1rem;
   padding: 1.2rem;
   color: beige;
-  cursor: pointer;
+  
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
   overflow: visible;
   display: flex;
